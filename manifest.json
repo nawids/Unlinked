@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Unlinked",
+  "version": "1.1",
+  "description": "Hides content on linkedin.com",
+  "icons": {
+    "48": "icons/linkedin.svg",
+    "96": "icons/linkedin.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["unlinked.js"]
+    }
+  ],
+  "options_ui": {
+    "page": "options.html"
+  },
+  "permissions": ["storage"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "unlinked@pinkpaisleydesigns.com"
+    }
+  }
+}

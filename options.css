@@ -1,0 +1,28 @@
+button {
+  display: block;
+  padding: 10px 15px;
+  background: black;
+  border: 0;
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+  transition: all .2s ease-in;
+}
+button:hover {
+  background-color: cadetblue;
+  color: #000;
+  cursor: pointer;
+}
+button:active {
+  transform: translateY(4px);
+}
+textarea {
+  display: block;
+  margin-top: 5px;
+  padding: 5px;
+  width: 100%;
+}
+label {
+  display: block;
+  margin-top: 10px;
+}
