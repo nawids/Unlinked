@@ -1,10 +1,10 @@
 function onError(error) {
   console.log(`Error: ${error}`);
 }
-var brandArray, allSpans;
-var lastSize=0;
-var contentRemovedCounter = 0;
-var promotedRemovedCounter = 0;
+let brandArray, allSpans;
+let lastSize=0;
+let contentRemovedCounter = 0;
+let promotedRemovedCounter = 0;
 
 function onGot(item) {
   let brand_page = '';
@@ -13,19 +13,22 @@ function onGot(item) {
   }
   // clean spaces and make into array
   brandArray = brand_page.replace(', ',',').split(',');
+  if (brandArray.length === 1)
+  {
+    brandArray.push("Test");
+  }
+  console.log(brandArray);
   allSpans = document.getElementsByTagName('span');
 }
 
 function loopItems(elements,pages) {
-    var time="";
     console.time("time");
     Array.from(elements).forEach(function (element) {
-        if((element.innerHTML.includes("Promoted") || element.innerHTML.includes("Gepromoot")) && element.innerHTML.length < 30){
-//        if(element.innerHTML.includes("Promoted")){
-            sib = element.previousElementSibling;
-            blok = sib.previousElementSibling;
-            card = blok.firstElementChild;
-            brand = card.firstElementChild;
+        if(element.innerHTML.includes("Promoted")){
+            let sib = element.previousElementSibling;
+            let blok = sib.previousElementSibling;
+            let card = blok.firstElementChild;
+            let brand = card.firstElementChild;
             console.log("Promoted content being removed: "+ brand.innerHTML);
             parent = element.closest('[data-id]');
             parent.remove();

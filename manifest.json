@@ -9,7 +9,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.linkedin.com/*"],
+      "matches": ["*://*.linkedin.com/feed*"],
       "js": ["unlinked.js"]
     }
   ],
@@ -19,7 +19,7 @@
   "permissions": ["storage"],
   "browser_specific_settings": {
     "gecko": {
-      "id": "unlinked@pinkpaisleydesigns.com"
+      "id": "unlinked@nawidslr.com"
     }
   }
 }
